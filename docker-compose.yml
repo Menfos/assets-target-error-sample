@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  targeterrorsample:
+    image: targeterrorsample
+    build:
+      context: .
+      dockerfile: TargetErrorSample/Dockerfile
