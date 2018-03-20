@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TestingCoreLib;
+using TestingStandartLib;
 
 namespace TargetErrorSample.Controllers
 {
@@ -13,7 +15,10 @@ namespace TargetErrorSample.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            var standartWriter = new WriterStandart();
+            var coreWriter = new WriterCore();
+            
+            return new string[] { standartWriter.Write("value1"), coreWriter.Write("value2") };
         }
 
         // GET api/values/5
